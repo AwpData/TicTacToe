@@ -6,6 +6,8 @@ public class TicTacToe_Variables {
 		public int y; // y-coordinate variable
 		public int player1; // points player 1 has
 		public int player2; // points player 2 has
+		public boolean player1turn;
+		public boolean player2turn;
 	}
 
 
