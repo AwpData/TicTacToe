@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class TicTacToe extends TicTacToe_Variables {
+public class TicTacToe {
 	public static void main(String[] args) {
 		boolean player1turn = true; // test
 		boolean player2turn = false; // test
