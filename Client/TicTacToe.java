@@ -5,6 +5,7 @@ public class TicTacToe {
 		boolean player1turn = true; // test
 		boolean player2turn = false; // test
 		boolean win = false; // test
+		boolean tryagain = false;
 		Scanner input = new Scanner(System.in);
 		int boardsize = 3; // Can change if you want but not supported
 		String[] board = new String[boardsize * 2];
@@ -25,10 +26,11 @@ public class TicTacToe {
 				System.out.println("Player 2 your move: ");
 				symbol = "O"; // test section end
 			}
-			String coordinates = input.nextLine();
-			Scanner nums = new Scanner(coordinates).useDelimiter(",");
-			int x = nums.nextInt();
-			int y = nums.nextInt();
+			String coordinates = input.nextLine()  + ";";
+			String xStr = coordinates.substring(0, coordinates.indexOf(",")); //split user input line into 2 variables (var 1 str)
+			String yStr = coordinates.substring(coordinates.indexOf(",") + 1, coordinates.indexOf(";")); //split user input line into 2 variables (var 2 str)
+			int x = Integer.parseInt(xStr); //parse var 1
+			int y = Integer.parseInt(yStr);	//parse var 2 (finds what row)
 			placingAssignment(x, y, editedboard, symbol);
 			if (!player1turn) {
 				player1turn = true;
