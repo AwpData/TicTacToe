@@ -155,5 +155,4 @@ public class TicTacToe {
 		}
 		return true;
 	}
-
 }
