@@ -89,7 +89,7 @@ public class TicTacToe {
 	}
 
 	public static boolean checkColumnForWin(String[] editedboard) { // checks each column for matching pairs of X's or O's
-		for (int i = 1; i < 6; i += 2) {
+		for (int i = 1; i < 7; i += 2) {
 			if (editedboard[0].indexOf("X") == i && editedboard[1].indexOf("X") == i && editedboard[2].indexOf("X") == i) {
 				return true;
 			} else if (editedboard[0].indexOf("O") == i && editedboard[1].indexOf("O") == i && editedboard[2].indexOf("O") == i) {
@@ -155,4 +155,5 @@ public class TicTacToe {
 		}
 		return true;
 	}
+
 }
