@@ -81,4 +81,35 @@ public class TicTacToe {
 		}
 		System.out.println("+-+-+-+");
 	}
+	public static boolean checkForWin() { // if any of the three other methods are true, then a player has won
+		return(checkRowForWin || checkColumnsForWin|| checkDiagonalsForWin ); 
+		
+	}
+	
+	public static boolean checkRowForWin() { // uses a for loop to go through the three rows to see if all the values match 
+		for (int i = 0; i < 3; i++) {
+            if (checkRowCol(board[i][0], board[i][1], board[i][2]) == true) {
+                return true;
+            }
+        }
+        return false;
+	}
+
+	public static boolean checkColumnsForWin() { // uses a for loop to go through the columns to see if all the values match
+		 for (int i = 0; i < 3; i++) {
+	            if (checkRowCol(board[0][i], board[1][i], board[2][i]) == true) {
+	                return true;
+	            }
+	        }
+	        return false;
+	}
+	
+	public static boolean checkDiagonalsForWin() { // checks diagonals to see if they match 
+		 return ((checkRowCol(board[0][0], board[1][1], board[2][2]) == true) || (checkRowCol(board[0][2], board[1][1], board[2][0]) == true));
+	}
+	
+	public static boolean checkRowCol(char c1, char c2, char c3) {// receives three values from the other methods to see if they all equal each other
+		return ((c1!='-')&& (c1==c2)&&(c2==c3));
+		// c1!='-'checks if the first character is empty or not (i dont know what an empty spot looks like so might need changing)
+	}
 }
