@@ -57,9 +57,6 @@ public class TicTacToe {
 				break;
 			}
 			if (checkForWin(editedboard)) { //Checks win methods
-				if(!checkForWin(editedboard)) {
-					System.out.println("Tie game!");
-				}
 				System.out.println(currentplayer + " wins!");
 				break;
 			} 
