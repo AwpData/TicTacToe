@@ -1,6 +1,6 @@
 public class GameWin {
   
-  public static boolean checkForWin(String[] editedboard) { //Simplifies what it checks for (easy reading) 
+	public static boolean checkForWin(String[] editedboard) { //Simplifies what it checks for (easy reading) 
 		return (checkRowForWin(editedboard) || checkColumnForWin(editedboard) || checkDiagonalForWin(editedboard));
 	}
 	
@@ -14,10 +14,10 @@ public class GameWin {
 	}
 
 	public static boolean checkColumnForWin(String[] editedboard) { // checks each column for matching pairs of X's or O's
-		for (int i = 1; i < 6; i += 2) {
-			if (editedboard[0].indexOf("X") == i && editedboard[1].indexOf("X") == i && editedboard[2].indexOf("X") == i) {
+		for (int i = 0; i < 7; i++) {
+			if (editedboard[0].charAt(i) == 'X' && editedboard[1].charAt(i) == 'X' && editedboard[2].charAt(i) == 'X') {
 				return true;
-			} else if (editedboard[0].indexOf("O") == i && editedboard[1].indexOf("O") == i && editedboard[2].indexOf("O") == i) {
+			} else if (editedboard[0].charAt(i) == 'O' && editedboard[1].charAt(i) == 'O' && editedboard[2].charAt(i) == 'O') {
 				return true;
 			} 
 		}
@@ -25,13 +25,13 @@ public class GameWin {
 	}
 	
 	  public static boolean checkDiagonalForWin(String[] editedboard) {  // Checks for diagonals 
-		  if (editedboard[0].indexOf("X") == 1 && editedboard[1].indexOf("X") == 3 && editedboard[2].indexOf("X") == 5) {
+		  if (editedboard[0].charAt(1) == 'X' && editedboard[1].charAt(3) == 'X' && editedboard[2].charAt(5) == 'X') {
 			  return true;
-		  } else if (editedboard[0].indexOf("X") == 5 && editedboard[1].indexOf("X") == 3 && editedboard[2].indexOf("X") == 1) {
+		  } else if (editedboard[0].charAt(5) == 'X' && editedboard[1].charAt(3) == 'X' && editedboard[2].charAt(1) == 'X') {
 			  return true;
-		  } else if (editedboard[0].indexOf("O") == 1 && editedboard[1].indexOf("O") == 3 && editedboard[2].indexOf("O") == 5) {
+		  } else if (editedboard[0].charAt(1) == 'O' && editedboard[1].charAt(3) == 'O' && editedboard[2].charAt(5) == 'O') {
 			  return true;
-		  } else if (editedboard[0].indexOf("O") == 5 && editedboard[1].indexOf("O") == 3 && editedboard[2].indexOf("O") == 1) {
+		  } else if (editedboard[0].charAt(5) == 'O' && editedboard[1].charAt(3) == 'O' && editedboard[2].charAt(1) == 'O') {
 			  return true;
 		  }
 		  return false;
