@@ -44,5 +44,3 @@
 				tryagain = false;
 			}
 		}
-	}
-}
