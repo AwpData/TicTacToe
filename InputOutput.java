@@ -1,30 +1,4 @@
-import java.util.*;
 
-//Don't choose an occupied space or you miss your turn 
-public class TicTacToe {
-	public static void main(String[] args) {
-		boolean player1turn = true; // if player 1 can go
-		boolean player2turn = false; // if player 2 can go
-		boolean win = false; //determines if someone won
-		boolean tryagain = false;
-		Scanner input = new Scanner(System.in);
-		int boardsize = 3; //default boardsize (cannot change as it is not supported)
-		int num = 0;
-		String[] board = new String[boardsize * 2]; //create new board
-		String[] editedboard = board; //create a copy of the board to store values & to check for wins
-		String symbol = ""; //symbol X or O depending on player
-		String currentplayer = ""; //who the current player is 
-		for (int i = 0; i <= boardsize * 2 - 1; i += 2) { // base board
-			board[i] = "+-+-+-+";
-			board[i + 1] = "| | | |";
-		}
-		for(int i = 0; i <= boardsize * 2 - 1; i++) {
-			System.out.println(board[i]);
-		}
-		System.out.println("+-+-+-+");
-		for (int i = 1; i < editedboard.length; i += 2) { // board without the borders (For filling in)
-			editedboard[i - 1] = board[i];
-		}
 		while (!win) { // start of user input
 			System.out.println();
 			if (player1turn) { // test section
